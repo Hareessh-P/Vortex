@@ -1,5 +1,6 @@
 package com.nova.vortex;
 
+import com.nova.vortex.core.JobType;
 import com.nova.vortex.domain.Job;
 import com.nova.vortex.persistance.JobRepository;
 import org.springframework.boot.CommandLineRunner;
@@ -21,7 +22,7 @@ public class StartupRunner implements CommandLineRunner {
         // Insert a job
         Job job = Job.builder()
                 .tenantId("test-tenant")
-                .jobType("TEST")
+                .jobType(JobType.IMPORT)
                 .status("SUBMITTED")
                 .payload("dummy-payload")
                 .attempts(0)
